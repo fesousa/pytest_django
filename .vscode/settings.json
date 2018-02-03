@@ -1,0 +1,6 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "python.pythonPath": "F:/Dev/python/django/python/Scripts/python.exe",
+    "python.unitTest.pyTestEnabled": true,
+    "python.unitTest.pyTestPath": "F:/Dev/python/django/python/Scripts/py.test"
+}

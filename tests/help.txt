@@ -1,0 +1,11 @@
+1. Instalar pytest
+    pip install pytest
+2. Instalar pytest-django
+    pip install pytest-django
+3. Criar uma pasta tests no projeto do Django
+4. Criar um arquivo conftest.py na pasta tests (ver conteúdo no projeto)
+5. Criar um arquivo de testes na pasta tests, como costuma fazer com pytest nem um projeto sem Django
+    ver arquivo test_add_question.py
+6. Para testar com BD, utilize o decorator @pytest.mark.django_db. Uma base de teste será criada para os testes
+
+
