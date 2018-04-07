@@ -10,6 +10,6 @@ def test_add_disciplinas_aluno():
     a = Aluno(nome = 'Fernando',ra=123456, desconto=10)
     a.save()
     a.disciplinas.set([d1,d2])
-    a.save()
+    a.save()    
 
-    assert a.id == 1
+    assert a.get_mensalidade() == 315
