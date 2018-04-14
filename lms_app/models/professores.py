@@ -17,13 +17,13 @@ class Professor(Pessoa):
     ''' com composicao
     '''
 
-    disciplinas = models.ManyToManyField(Disciplina)
+    
 
-    def add_disciplina(self, disciplina):
+    def adicionaDisciplina(self, disciplina):
         self.disciplinas.add(disciplina)
 
-    def calcula_carga_horaria(self):
+    def retornaCargaHoraria(self):
         soma_carga = 0
-        for d in self.disciplinas:
-            soma_carga += d.carga_horaria
+        for d in self.disciplinas.all():
+            soma_carga += d.carga_horaria/20
         return soma_carga
