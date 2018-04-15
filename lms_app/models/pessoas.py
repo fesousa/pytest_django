@@ -1,5 +1,7 @@
 from django.db import models
 from .disciplinas import Disciplina
+from django.utils.functional import cached_property
+
 
 class Pessoa(models.Model):
     
@@ -9,7 +11,8 @@ class Pessoa(models.Model):
     ra = models.IntegerField()
     disciplinas = models.ManyToManyField(Disciplina)
 
-    def retornaSobrenome(self):
+    @cached_property
+    def sobrenome(self):
         return self.nome.split(' ')[-1]
 
     def retornaCargaHoraria(self):

@@ -1,0 +1,40 @@
+from lms_app.models.alunos import Aluno
+from lms_app.models.professores import Professor
+from lms_app.models.disciplinas import Disciplina
+p = Professor()
+p.nome = 'Fernando Sousa'
+p.email = 'email'
+p.celular = 'celular'
+p.ra = 123456
+p.save()
+d = Disciplina()
+d.nome = 'LP1'
+d.carga_horaria = 80
+d.valor = 100
+d.save()
+p.disciplinas.set([d])
+p.retornaCargaHoraria()
+a = Aluno()
+a.nome = 'André Santos'
+a.email = 'email'
+a.celular = 'celular'
+a.ra = 98765
+a.desconto = 10
+a.save()
+a.disciplinas.set([d])
+a.retornaCargaHoraria()
+
+from lms_app.models.disciplinas import Disciplina
+from lms_app.models.cursos import Curso
+d = Disciplina()
+d.nome = 'LP2'
+d.carga_horaria = 80
+d.valor = 100
+c = Curso(nome='ADS')
+c.save()
+d.curso = c
+d.save()
+
+Disciplina.objects.filter(curso__nome='ADS')
+
+Disciplina.objects.disciplinas_ativas()
