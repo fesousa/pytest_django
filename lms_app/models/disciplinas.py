@@ -1,6 +1,6 @@
 from django.db import models
 from .cursos import Curso
-from ..managers import DisciplinaManager
+from ..managers.disciplinas_managers import DisciplinaManager
 
 class Disciplina(models.Model):
     nome = models.CharField(max_length=200)

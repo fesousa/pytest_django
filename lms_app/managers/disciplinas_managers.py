@@ -1,6 +1,6 @@
-from django.db.models.query import QuerySet
+from .super_manager import SuperQuerySet
 
-class DisciplinaQuerySet (QuerySet):
+class DisciplinaQuerySet (SuperQuerySet):
 
     def disciplinas_ativas(self):
         return self.filter(ativo=True)
