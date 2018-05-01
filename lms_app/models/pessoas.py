@@ -9,7 +9,6 @@ class Pessoa(models.Model):
     email = models.CharField(max_length=200)
     celular = models.CharField(max_length=9)
     ra = models.IntegerField()
-    disciplinas = models.ManyToManyField(Disciplina)
 
     @cached_property
     def sobrenome(self):
